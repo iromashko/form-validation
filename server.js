@@ -2,14 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
-const cors = require('cors');
 const multer = require('multer');
-
-const corsOptions = {
-  origin: 'https://angular-projects-eight.vercel.app/file-upload',
-  optionsSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
