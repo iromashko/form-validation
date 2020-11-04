@@ -2,7 +2,7 @@
   background: #eee;
   box-shadow: 1px 8px 12px 0 black;
   padding: 10px 30px;
-  margin: 100px auto;
+  margin: 30px auto;
   width: 85%;
   position: relative;
 }
@@ -42,4 +42,16 @@ form {
 
 .formRow {
   margin-bottom: 10px;
+}
+
+.phone {
+  display: flex;
+}
+
+span {
+  margin: 0 5px;
+}
+
+input[type='radio'] {
+  width: 20px;
 }

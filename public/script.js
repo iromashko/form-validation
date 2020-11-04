@@ -12,7 +12,13 @@ function sendData(e) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      email: formData.get('email'),
+      name: formData.get('email'),
+      email: formData.get('name'),
+      age: formData.get('age'),
+      zip: formData.get('zip'),
+      phone1: formData.get('phone1'),
+      phone2: formData.get('phone2'),
+      phone3: formData.get('phone3'),
     }),
     method: 'POST',
   };
