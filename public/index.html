@@ -13,15 +13,26 @@
     <title>Server side Form Validation</title>
   </head>
   <body>
-    <h1>Server side Form Validation</h1>
     <section class="container">
-      <form>
-        <div>
+      <div class="errorContainer">
+        <ul class="error"></ul>
+      </div>
+      <form autocomplete="off">
+        <div class="formRow">
           <div class="label">
             <label for="name">Name</label>
           </div>
           <div class="input">
             <input type="text" placeholder="name" name="name" />
+          </div>
+        </div>
+
+        <div class="formRow">
+          <div class="label">
+            <label for="name">Email</label>
+          </div>
+          <div class="input">
+            <input type="text" placeholder="email" name="email" />
           </div>
         </div>
         <button class="submit">Submit</button>

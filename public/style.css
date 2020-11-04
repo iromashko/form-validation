@@ -29,4 +29,19 @@ form {
   bottom: 10px;
   right: 10px;
 }
+
+.errorContainer {
+  background: #ddaaaa;
+  padding: 2px;
+  display: none;
+  margin-bottom: 25px;
+}
+
+.error {
+  color: #e03d3d;
+}
+
+.formRow {
+  margin-bottom: 10px;
+}
 /*# sourceMappingURL=style.css.map */
