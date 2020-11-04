@@ -6,7 +6,7 @@ const cors = require('cors');
 const multer = require('multer');
 
 const corsOptions = {
-  origin: 'https://example.com',
+  origin: 'https://angular-projects-eight.vercel.app/',
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
