@@ -58,4 +58,11 @@ span {
 input[type='radio'] {
   width: 20px;
 }
+
+.successContainer {
+  background: lightgreen;
+  display: none;
+  padding: 2px;
+  margin-bottom: 25px;
+}
 /*# sourceMappingURL=style.css.map */
