@@ -2,6 +2,14 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
+const cors = require('cors');
+const multer = require('multer');
+
+const corsOptions = {
+  origin: 'https://example.com',
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -61,5 +69,33 @@ app.post(
     });
   }
 );
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads');
+  },
+  filename: function (req, file, cb) {
+    cb(null, `${Date.now()}_${file.originalname}`);
+  },
+});
+const upload = multer({ storage });
+
+app.post('/file', upload.single('file'), (req, res) => {
+  const file = req.file;
+  if (file) {
+    res.json(file);
+  } else {
+    throw new Error('File upload unsuccessful');
+  }
+});
+
+app.post('/multifiles', upload.array('files'), (req, res) => {
+  const files = req.files;
+  if (Array.isArray(files) && files.length > 0) {
+    res.json(files);
+  } else {
+    throw new Error('Files upload unsuccessful');
+  }
+});
 
 app.listen(process.env.PORT || 3001);
